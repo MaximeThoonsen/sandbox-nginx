@@ -5,7 +5,6 @@ nginx_files:
   - myssl.key
 
 nginx_vhosts:
-  - exercice
   - html
   - html-server-name
   - https
