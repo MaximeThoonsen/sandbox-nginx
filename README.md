@@ -1,4 +1,7 @@
 # Sandbox nginx
+This repository provides a sandbox with some basics nginx vhosts. The purpose is to help users to understand how nginx works with those examples.
+
+Bonus: a little exercise
 
 ## Requirements
 + Vagrant (tested on 1.5.3)
