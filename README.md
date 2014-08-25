@@ -15,10 +15,16 @@ If the provisioning haven't been done once, you can use
 $ vagrant provision
 </pre>
 
+To connect to the vm use
+
+<pre>
+$ vagrant ssh
+</pre>
+
 Edit your /etc/hosts or equivalent and add  
 <pre>
 #nginx demo
-199.199.199.96 *.demo
+199.199.199.96 nginx.demo
 199.199.199.96 nginx-php.demo
 199.199.199.96 nginx-symfony.demo
 199.199.199.96 nginx-proxy.demo
@@ -27,8 +33,11 @@ Edit your /etc/hosts or equivalent and add
 </pre>
 
 You need to download symfony in order to make the nginx-symfony.demo website works
-Use composer (https://getcomposer.org/download/)
+Use composer (https://getcomposer.org/download/) in the www/symfony directory of your vm.
 
+##Sandbox
+Your sandbox is now ready to use.
+You can visit the page http://199.199.199.96 to see the first conf.
 
 
 ##Exercice
