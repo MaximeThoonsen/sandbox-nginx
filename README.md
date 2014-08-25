@@ -6,31 +6,29 @@
 
 ##Installation
 To run the vm
-<pre>
-$ vagrant up
-</pre>
+
+    $ vagrant up
+
 
 If the provisioning haven't been done once, you can use
-<pre>
-$ vagrant provision
-</pre>
+
+    $ vagrant provision
+
 
 To connect to the vm use
 
-<pre>
-$ vagrant ssh
-</pre>
+    $ vagrant ssh
+
 
 Edit your /etc/hosts or equivalent and add  
-<pre>
-#nginx demo
-199.199.199.96 nginx.demo
-199.199.199.96 nginx-php.demo
-199.199.199.96 nginx-symfony.demo
-199.199.199.96 nginx-proxy.demo
-199.199.199.96 nginx-https.demo
-199.199.199.96 exercice.demo
-</pre>
+
+    #nginx demo
+    199.199.199.96 nginx.demo
+    199.199.199.96 nginx-php.demo
+    199.199.199.96 nginx-symfony.demo
+    199.199.199.96 nginx-proxy.demo
+    199.199.199.96 nginx-https.demo
+    199.199.199.96 exercice.demo
 
 You need to download symfony in order to make the nginx-symfony.demo website works
 Use composer (https://getcomposer.org/download/) in the www/symfony directory of your vm.
@@ -47,16 +45,15 @@ The second step is to make a successful call to a node api listening on the port
 We need to run our api
 
 In the www directory 
-<pre>
-$ npm install
-</pre>
+
+    $ npm install
 
 Then you need to run the node server:
-<pre>
-$ ./node_modules/.bin/coffee app.coffee
-</pre>
+    
+    $ ./node_modules/.bin/coffee app.coffee
 
 You can now modify your nginx conf in order to reach your api on the port 3000 with the /api url.
+
 Hint: use a proxy
 
 ## License
