@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice</title>
+</head>
+<body>
+<h1>Welcome on the page of the exercice</h1>
+<h2 id="ajax_result"></h2>
+<h2 id="noajax">Your proxy or your nodejs app doesn't work</h2>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<script>
+    $.ajax({
+        url: "/api",
+        context: document.body,
+        success: function(message){
+            console.log('data from the api:'+message);
+            $('#ajax_result').text('Well done it works, here is the message from the api:'+message);
+            $('#noajax').remove();
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+
+nginx_files:
+  - myssl.pem
+  - myssl.key
+
+nginx_vhosts:
+  - exercice
+  - html
+  - html-server-name
+  - https
+  - php
+  - simple-proxy
+  - symfony

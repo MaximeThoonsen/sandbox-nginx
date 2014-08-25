@@ -1,0 +1,9 @@
+---
+- name: Webserver for Symfony app
+  hosts: all
+  sudo: yes
+  gather_facts: true
+  roles:
+    - nginx-demo
+    - php
+    - common

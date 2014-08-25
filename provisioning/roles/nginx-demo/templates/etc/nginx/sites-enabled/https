@@ -1,0 +1,23 @@
+server {
+    listen      80;
+    root        /var/www/https;
+    server_name nginx-https.demo;
+
+    return 301 https://nginx-https.demo$request_uri;
+}
+
+
+server {
+    listen      443 ssl;
+    root        /var/www/https/;
+
+    access_log /var/log/nginx/https.access.log;
+    error_log /var/log/nginx/https.error.log;
+
+    server_name         nginx-https.demo;
+    ssl_certificate     conf.d/myssl.pem;
+    ssl_certificate_key conf.d/myssl.key;
+    ssl_protocols       SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+}
+

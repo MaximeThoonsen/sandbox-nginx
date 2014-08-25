@@ -1,0 +1,22 @@
+server {
+        listen 80;
+        server_name nginx-proxy.demo;
+
+        #Every url starting by '/' are proxified to 127.0.0.1:8080
+        location / {
+                resolver localhost; #You can specify which dns server or the /etc/hosts file to resolve the domain
+
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_pass http://127.0.0.1:8080;
+        }
+}
+
+#You can put here a lot of service that don't listen to the port 80. Like a node server.
+server {
+        listen 8080;
+        root        /var/www/simple-proxy/;
+
+        access_log /var/log/nginx/proxy.access.log myCustomLog;
+        error_log /var/log/nginx/proxy.error.log;
+}

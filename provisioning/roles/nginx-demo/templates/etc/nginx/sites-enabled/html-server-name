@@ -1,0 +1,8 @@
+server {
+    listen      80;
+    server_name nginx.demo;
+    root        /var/www/html-server-name;
+
+    #More informations on server_name:
+    #http://nginx.org/en/docs/http/server_names.html
+}

@@ -1,0 +1,48 @@
+---
+- name: Include nginx variables.
+  include_vars: "vars.yml"
+
+- name: install nginx
+  apt: name=nginx state=latest update_cache=true cache_valid_time=3600
+  tags:
+  - packages
+
+- name: enable service
+  service: name=nginx enabled=yes state=started
+  notify: restart-nginx
+
+- name: remove default conf
+  file: state=absent path=/etc/nginx/conf.d/default.conf
+  notify: reload-nginx
+
+- name: remove default site conf
+  file: path=/etc/nginx/conf.d/default state=absent
+  notify: reload-nginx
+
+- name: remove default site conf
+  file: path=/etc/nginx/sites-available/default state=absent
+  notify: reload-nginx
+
+- name: add custom nginx.conf
+  template: src=etc/nginx/nginx.conf dest=/etc/nginx/nginx.conf
+  notify: restart-nginx
+
+- name: Put vhost's files in the sites-enabled directory
+  template:
+    src=etc/nginx/sites-enabled/{{ item }}
+    dest=/etc/nginx/sites-enabled/{{ item }}
+    owner=root
+    group=root
+    mode=644
+  with_items: nginx_vhosts
+  notify: restart webserver
+
+- name: Put ssl's files in the conf.d directory
+  copy:
+    src=etc/nginx/conf.d/{{ item }}
+    dest=/etc/nginx/conf.d/{{ item }}
+    owner=root
+    group=root
+    mode=644
+  with_items: nginx_files
+  notify: restart webserver

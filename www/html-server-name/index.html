@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome in the nginx world</title>
+</head>
+<body>
+<h1>Welcome in the nginx world</h1>
+<h2>This time we add a server name</h2>
+<pre>
+server {
+    listen      80;
+    server_name nginx.demo;
+    root        /var/www/html-server-name;
+
+    #More informations on server_name:
+    #http://nginx.org/en/docs/http/server_names.html
+}
+</pre>
+</body>
+</html>

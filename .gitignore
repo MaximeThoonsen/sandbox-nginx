@@ -1,0 +1,8 @@
+.idea/
+.vagrant/
+www/symfony/app/cache/*
+www/symfony/app/config/parameters.yml
+www/symfony/app/logs/*
+www/symfony/vendor/
+www/node_modules/
+www/npm-debug.log
