@@ -57,6 +57,7 @@ $ ./node_modules/.bin/coffee app.coffee
 </pre>
 
 You can now modify your nginx conf in order to reach your api on the port 3000 with the /api url.
+Hint: use a proxy
 
 ## License
 MIT
