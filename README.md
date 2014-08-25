@@ -1,8 +1,8 @@
 # Sandbox nginx
 
 ## Requirements
-Vagrant (tested on 1.5.3)
-Ansible (tested on 1.8)
++ Vagrant (tested on 1.5.3)
++ Ansible (tested on 1.8)
 
 ##Installation:
 To run the vm
