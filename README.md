@@ -41,11 +41,17 @@ You can visit the page http://199.199.199.96 to see the first conf.
 
 
 ##Exercice
-The goal of the exercice in to display the page in www/exercice/index.html. The webpage contains an ajax call to a node server (via '/api').
+The goal of the exercice is to display the page in www/exercice/index.html. The webpage contains an ajax call to a node koa server (via '/api').
 
-To install the node 
+More info about koa here: https://github.com/koajs/koa
+
+To install koa: 
 <pre>
 $ npm install koa
+</pre>
+
+Then you need to run the koa server:
+<pre>
 $ alias node='node --harmony'
 $ node app.js
 </pre>
