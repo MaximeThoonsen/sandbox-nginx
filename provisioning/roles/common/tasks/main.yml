@@ -2,5 +2,5 @@
 - name: apt - install packages
   apt: name={{item}} state=latest update-cache=yes cache_valid_time=3600
   with_items:
-    - node
+    - nodejs
     - npm
