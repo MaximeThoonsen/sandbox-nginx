@@ -41,20 +41,22 @@ You can visit the page http://199.199.199.96 to see the first conf.
 
 
 ##Exercise
-The goal of the exercice is to display the page in www/exercice/index.html. The webpage contains an ajax call to a node koa server (via '/api').
+The first step is to create a nginx conf to display the page in www/exercice/index.html when you type "http://exercise.demo" in your browser.
 
-More info about koa here: https://github.com/koajs/koa
+The second step is to make a successful call to a node api listening on the port 3000. 
+We need to run our api
 
-To install koa: 
+In the www directory 
 <pre>
-$ npm install koa
+$ npm install
 </pre>
 
-Then you need to run the koa server:
+Then you need to run the node server:
 <pre>
-$ alias node='node --harmony'
-$ node app.js
+$ ./node_modules/.bin/coffee app.coffee
 </pre>
+
+You can now modify your nginx conf in order to reach your api on the port 3000 with the /api url.
 
 ## License
 MIT
