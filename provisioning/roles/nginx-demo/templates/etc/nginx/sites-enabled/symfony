@@ -17,6 +17,7 @@ server {
 
     #So we don't have to see the app_dev.php or the app.php of symfony
     try_files $uri @rewrite;
+
     location @rewrite {
         rewrite ^/?(.*)$ /app_dev.php/$1 last;
     }
@@ -37,4 +38,4 @@ server {
         expires 1y;
         log_not_found off;
     }
-}
+}###

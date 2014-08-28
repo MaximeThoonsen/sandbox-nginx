@@ -6,7 +6,6 @@ server {
     return 301 https://nginx-https.demo$request_uri;
 }
 
-
 server {
     listen      443 ssl;
     root        /var/www/https/;
@@ -17,7 +16,7 @@ server {
     server_name         nginx-https.demo;
     ssl_certificate     conf.d/myssl.pem;
     ssl_certificate_key conf.d/myssl.key;
-    ssl_protocols       SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers         HIGH:!aNULL:!MD5;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers         ALL:!EXP:!LOW:!DSS:!3DES:!PSK:!aNULL:!eNULL:!RC4:HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers   on;
 }
-
