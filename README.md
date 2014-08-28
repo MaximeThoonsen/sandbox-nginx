@@ -1,6 +1,8 @@
 # Sandbox nginx
 This repository provides a sandbox with some basics nginx vhosts. The purpose is to help users to understand how nginx works with those examples.
 
+Have a look at my [blog's post](http://www.theodo.fr/blog/2014/08/1894/) to learn the basics of nginx
+
 Bonus: a little exercise
 
 ## Requirements
