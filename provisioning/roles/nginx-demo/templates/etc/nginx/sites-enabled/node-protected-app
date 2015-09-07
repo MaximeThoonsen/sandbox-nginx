@@ -1,0 +1,18 @@
+server {
+        listen 8443;
+        ssl on;
+        server_name node-protected-app;
+        ssl_certificate      /var/www/certificates/server.crt;
+        ssl_certificate_key  /var/www/certificates/server.key;
+        ssl_client_certificate /var/www/certificates/ca.crt;
+        ssl_verify_client optional;
+
+        location / {
+
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header VERIFIED $ssl_client_verify;
+                proxy_set_header DN $ssl_client_s_dn;
+                proxy_pass http://127.0.0.1:3000;
+        }
+}
