@@ -6,8 +6,8 @@ Have a look at my [blog's post](http://www.theodo.fr/blog/2014/08/1894/) to lear
 All the certficates password you need to start nginx are 'test'.
 
 ## Requirements
-+ Vagrant (tested on 1.5.3)
-+ Ansible (tested on 1.8)
++ Vagrant (from 1.5.3)
++ Ansible (from 1.8)
 
 ##Installation
 To run the vm
