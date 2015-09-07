@@ -3,8 +3,6 @@ This repository provides a sandbox with some basics nginx vhosts. The purpose is
 
 Have a look at my [blog's post](http://www.theodo.fr/blog/2014/08/1894/) to learn the basics of nginx.
 
-All the certficates password you need to start nginx are 'test'.
-
 ## Requirements
 + Vagrant (tested on 1.5.3)
 + Ansible (tested on 1.8)
@@ -12,18 +10,23 @@ All the certficates password you need to start nginx are 'test'.
 ##Installation
 To run the vm
 
-    $ vagrant up
+    vagrant up
 
 
 If the provisioning haven't been done once, you can use
 
-    $ vagrant provision
+    vagrant provision
 
 
 To connect to the vm use
 
-    $ vagrant ssh
+    vagrant ssh
 
+You will need to start nginx with the command License
+
+    sudo service nginx start
+
+All the certficates password you need to start nginx are 'test'.
 
 Edit your /etc/hosts or equivalent and add  
 

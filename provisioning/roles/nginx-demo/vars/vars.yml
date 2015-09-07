@@ -11,3 +11,4 @@ nginx_vhosts:
   - php
   - simple-proxy
   - symfony
+  - node-protected-app
